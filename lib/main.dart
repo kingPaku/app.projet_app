@@ -2,13 +2,13 @@ import "package:flutter/material.dart";
 import "package:projet_app/view/public/Auth.dart";
 
 
-void main() => runApp(Myapp());
+void main() => runApp(const Myapp());
 class Myapp extends StatelessWidget {
-  const Myapp({super.key});
+  const Myapp({super.key});         
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Shoolsearch',
       debugShowCheckedModeBanner: false,
       home : Authentification(),
