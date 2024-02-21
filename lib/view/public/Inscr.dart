@@ -5,24 +5,23 @@ import 'package:projet_app/view/public/Termes.dart';
 
 
 
-class Authentification extends StatefulWidget {
-  const Authentification({super.key});
+class Inscription extends StatefulWidget {
+  const Inscription({super.key});
+
   @override
-  State<Authentification> createState() => _AuthentificationState();
+  State<Inscription> createState() => _InscriptionState();
 }
 
-class _AuthentificationState extends State<Authentification> {
+class _InscriptionState extends State<Inscription> {
   bool _isSecret = true;
- 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(onPressed: retourConnec ,
-           icon: const Icon(Icons.arrow_back),
-            color: Colors.black),
-        ),
+       appBar: AppBar(
+        leading: IconButton(onPressed: retourConnec,
+           icon: const Icon(Icons.arrow_back)),
+       ),
         body: Center(
           child: SingleChildScrollView(
             padding: const EdgeInsets.symmetric(
@@ -32,8 +31,9 @@ class _AuthentificationState extends State<Authentification> {
 
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+            
               RichText(text: TextSpan(
-                text:"faire le choix d'une bonne ecole pour son enfant\n".toUpperCase(),
+                text:"l'education est un element primordial pour le bon developpement d'un individu\n".toUpperCase(),
                 style: const TextStyle(
                   color: Colors.black,
                 ),
@@ -55,7 +55,8 @@ class _AuthentificationState extends State<Authentification> {
 
               const Text("nous vous donnons le choix ",
               style: TextStyle(
-                fontStyle: FontStyle.italic
+                fontStyle: FontStyle.italic,
+                
               ) ),
             
               const SizedBox(height:40.0),
@@ -64,6 +65,25 @@ class _AuthentificationState extends State<Authentification> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  const Text("Entrez votre nom :"),
+                  const SizedBox(height: 10.0),
+
+                  TextFormField(
+                    decoration: 
+                    InputDecoration(
+                      hintText: "Ethan hunte",
+                      border:
+                       OutlineInputBorder(
+                         borderRadius: BorderRadius.circular(0.0),
+                      borderSide: const BorderSide(color: Colors.grey)
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                       borderRadius: BorderRadius.circular(0.0),
+                      borderSide: const BorderSide(color: Colors.blue)
+                    )
+                    ),
+                  ),
+                  const SizedBox(height: 10.0,),
                   const Text("Tapez votre Email :"),
                   const SizedBox(height: 10.0,),
                   TextFormField(
@@ -87,21 +107,20 @@ class _AuthentificationState extends State<Authentification> {
                   const SizedBox(height: 10.0,),
 
                   TextFormField(
-                  obscureText: _isSecret,
+                 obscureText: _isSecret,
                     decoration: 
                     InputDecoration(
                      suffixIcon: GestureDetector(
                       onTap: ()=> setState(() {
-                          _isSecret = !_isSecret;
+                        _isSecret = !_isSecret;
                       }),
                       child: Icon(
                         !_isSecret?
                         Icons.visibility:
                         Icons.visibility_off,
-
                       ),
                      ),
-                      hintText: "Ex:Jfrufk485kJ",
+                      hintText: "Ex:isje34DE",
                       border: 
                       OutlineInputBorder(
                         borderRadius: BorderRadius.circular(0.0),
@@ -114,7 +133,38 @@ class _AuthentificationState extends State<Authentification> {
                       ),
                     ),
                   ),
-                  const SizedBox(height:10.0),
+                  const SizedBox(height: 10.0),
+                  const Text("Confirmer votre mot de passe:"),
+                  const SizedBox(height: 10.0),
+
+                  TextFormField(
+                    obscureText: _isSecret,
+                    decoration : 
+                    InputDecoration(
+                     suffixIcon: GestureDetector(
+                      onTap: () =>  setState(() {
+                          _isSecret = !_isSecret;
+                      }),
+                      child: Icon(
+                        !_isSecret?
+                        Icons.visibility:
+                        Icons.visibility_off
+                      ),
+                     ),
+                      hintText: "Ex:isje34DE",
+                      border:
+                      OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(0.0),
+                        borderSide: const BorderSide(color: Colors.grey)
+                      ),
+                      focusedBorder: 
+                       OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(0.0),
+                        borderSide: const BorderSide(color: Colors.blue)
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height:25.0),
 
                   ElevatedButton(
                     onPressed: versTermes,
