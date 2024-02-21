@@ -14,7 +14,7 @@ class _AuthentificationState extends State<Authentification> {
       child: Scaffold(
         body: Center(
           child: SingleChildScrollView(
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               horizontal: 30.0
             ),
             child: Column(
@@ -40,7 +40,7 @@ class _AuthentificationState extends State<Authentification> {
                  ], 
                  
               )),
-              SizedBox(height: 10.0),
+              const SizedBox(height: 10.0),
 
               const Text("nous vous donnons le choix ",
               style: TextStyle(
@@ -73,7 +73,11 @@ class _AuthentificationState extends State<Authentification> {
                   const SizedBox(height:10.0),
 
                   ElevatedButton(
-                    onPressed: () => print("Send"), 
+                    onPressed: () => print("Send"),
+                   style: ElevatedButton.styleFrom(
+                    backgroundColor: Theme.of(context).primaryColor,
+                    elevation: 1,
+                   ), 
                    child: Padding(
                     padding: const EdgeInsets.symmetric( 
                       vertical: 15.0),
@@ -82,10 +86,6 @@ class _AuthentificationState extends State<Authentification> {
                     color: Colors.white,
                     ),
                     ),
-                   ),
-                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Theme.of(context).primaryColor,
-                    elevation: 1,
                    ),
                    
                    ),
